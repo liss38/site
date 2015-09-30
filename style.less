@@ -1,0 +1,46 @@
+@text-color: #999;
+@size: 10px;
+
+.createGradient(@color1, @color2) {
+	background: -webkit-linear-gradient(left, @color1 0%, @color2 100%);
+	background: linear-gradient(left, @color1 0%, @color2 100%);
+}
+
+.createOrnament() {
+	border: 1px solid rgba(0, 0, 0, .3);
+	border-radius: 3px;
+	padding: 10px 15px;
+}
+
+.createButBox(@w: 200px, @h: 50px) {
+	display: inline-block;
+	width: @w;
+	height: @h;
+	overflow: hidden;
+	
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height: @h;
+	font-size: 20px;
+	color: @text-color;
+}
+
+h1 {
+	display: inline-block;
+	font-size: @size + 40px;
+	color: @text-color;
+	.createOrnament();
+	.createGradient(#000, #999);
+}
+
+h2 {
+	display: inline-block;
+	font-size: @size + 25px;
+	color: @text-color;
+}
+
+.button {
+	.createOrnament();
+	.createButBox();
+}
